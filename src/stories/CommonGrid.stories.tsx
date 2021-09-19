@@ -27,5 +27,6 @@ CommonGridLayout.args = {
 ImageCardLayout.args = {
     children: (
         <ImageContentCardLayout />
+        <ImageContentCardLayout />
     )
 }
