@@ -1,8 +1,11 @@
 import React from 'react';
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Grid } from "@mui/material";
 
 import { CommonGrid, CommonGridType } from "../component/CommonGrid";
-import { ImageContentCardLayout } from "../component/ImageContentCardLayout";
+
+import { SimpleCardLayout } from "../component/shared/SimpleCardLayout";
+import { SliderLayout } from "../component/shared/SliderLayout";
 
 export default {
     title: "Grid",
@@ -11,22 +14,34 @@ export default {
 
 const Template: Story<CommonGridType> = (args) => <CommonGrid {...args} />;
 
-export const CommonGridLayout = Template.bind({});
-export const ImageCardLayout = Template.bind({});
+export const ItemCardTemplate = Template.bind({});
+export const ItemSliderTemplate = Template.bind({});
 
-CommonGridLayout.args = {
+ItemCardTemplate.args = {
     children: (
-        <React.Fragment>
-            <ImageContentCardLayout />
-            <ImageContentCardLayout />
-            <ImageContentCardLayout />
-            <ImageContentCardLayout />
-        </React.Fragment>
+        <Grid
+            container
+            columnSpacing={2}
+            rowSpacing={3}
+        >
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+        </Grid>
     ),
 };
-ImageCardLayout.args = {
+
+ItemSliderTemplate.args = {
     children: (
-        <ImageContentCardLayout />
-        <ImageContentCardLayout />
+        <SliderLayout>
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+            <SimpleCardLayout />
+        </SliderLayout>
     )
 }
