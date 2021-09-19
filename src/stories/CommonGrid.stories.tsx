@@ -12,14 +12,20 @@ export default {
 const Template: Story<CommonGridType> = (args) => <CommonGrid {...args} />;
 
 export const CommonGridLayout = Template.bind({});
+export const ImageCardLayout = Template.bind({});
 
 CommonGridLayout.args = {
     children: (
-    <React.Fragment>
-        <ImageContentCardLayout />
-        <ImageContentCardLayout />
-        <ImageContentCardLayout />
-        <ImageContentCardLayout />
-    </React.Fragment>
+        <React.Fragment>
+            <ImageContentCardLayout />
+            <ImageContentCardLayout />
+            <ImageContentCardLayout />
+            <ImageContentCardLayout />
+        </React.Fragment>
     ),
 };
+ImageCardLayout.args = {
+    children: (
+        <ImageContentCardLayout />
+    )
+}
